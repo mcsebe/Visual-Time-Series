@@ -1,4 +1,4 @@
-from typing import Union
+from typing import List, Union, Dict, Any
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -21,7 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class ModelRequest()
+class ModelRequest(BaseModel):
+    data: List[Union[int, float]]
+    params: Dict[str, Any]
+    number_test: int
+    number_predict: int
 
 @app.get("/")
 def read_root():
