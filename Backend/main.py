@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 import os
 
+from models.Arima import Arima_Model
+
 app = FastAPI()
 
 load_dotenv()
@@ -34,4 +36,4 @@ def read_root():
 
 @app.POST("/ARIMA")
 def read_item(request: ModelRequest):
-    return {"item_id": item_id, "q": q}
+    return Arima_Model(request.data, request.params, request.number_test, request.number_predict)
