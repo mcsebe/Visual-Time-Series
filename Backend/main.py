@@ -34,6 +34,6 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.POST("/ARIMA")
+@app.post("/ARIMA")
 def read_item(request: ModelRequest):
     return Arima_Model(request.data, request.params, request.number_test, request.number_predict)
