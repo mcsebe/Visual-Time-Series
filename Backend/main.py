@@ -14,7 +14,6 @@ load_dotenv()
 DOMAIN_CORS = os.getenv("DOMAIN_CORS")
 
 origins = [DOMAIN_CORS]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -34,6 +33,6 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.post("/ARIMA")
+@app.put("/arima")
 def read_item(request: ModelRequest):
     return Arima_Model(request.data, request.params, request.number_test, request.number_predict)
