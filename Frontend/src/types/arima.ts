@@ -19,17 +19,10 @@ export interface ArimaRequest {
     validate_specification: boolean;
   }
 
-
-  export interface ArimaResponse{
-    data: ArimaData;
-    success: boolean;
-    message?: string;
-}
-
 export interface ArimaData{
   prediction_test: number[],
   prediction_all: number[],
-  prediction_next: number[],
+  prediction_next: number[] | number,
   errors_train_model: {
       MAE: number;
       RMSE: number;

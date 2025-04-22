@@ -1,8 +1,8 @@
-import { ArimaResponse, ArimaRequest } from '../types/arima';
+import { ArimaData, ArimaRequest } from '../types/arima';
 import api from "./main";
 
 
-export const postArima = async (payload: ArimaRequest): Promise<ArimaResponse> => {
+export const postArima = async (payload: ArimaRequest): Promise<ArimaData> => {
   try {
     const response = await api.put(`/arima`, payload);
     return response.data

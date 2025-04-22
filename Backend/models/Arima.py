@@ -31,7 +31,7 @@ def Arima_Model(data, params, number_test, number_predict):
     # Definition of the model using all data
     model_full = ARIMA(data, 
                   exog = params.get('exog', None),
-                  order = params.get('order', (0, 0, 0)),
+                  order = params.get('order', [0, 0, 0]),
                   trend = params.get('trend', None),
                   enforce_stationarity = params.get('enforce_stationarity', True),
                   enforce_invertibility = params.get('enforce_invertibility', True),
@@ -51,7 +51,7 @@ def Arima_Model(data, params, number_test, number_predict):
     mape_all = np.mean(np.abs((data - pred_all) / data)) * 100
 
     # Predicting next data
-    pred_next = fitted_model.forecast(steps=number_predict)[0]
+    pred_next = fitted_model.forecast(steps=number_predict)
 
     return {
         'prediction_test': pred_test.tolist(),
