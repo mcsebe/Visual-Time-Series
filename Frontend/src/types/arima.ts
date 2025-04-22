@@ -1,12 +1,12 @@
 export interface ArimaRequest {
     data: number[];
-    params: Params;
+    params: ArimaParams;
     number_test: number;
     number_predict: number;
   }
   
 
-  interface Params {
+  interface ArimaParams {
     exog: number[] | number[][] | null;
     order: [number, number, number];
     trend:'n' | 'c' | 't' | 'ct' | null;
@@ -18,3 +18,26 @@ export interface ArimaRequest {
     freq: string | null;
     validate_specification: boolean;
   }
+
+
+  export interface ArimaResponse{
+    data: ArimaData;
+    success: boolean;
+    message?: string;
+}
+
+export interface ArimaData{
+  prediction_test: number[],
+  prediction_all: number[],
+  prediction_next: number[],
+  errors_train_model: {
+      MAE: number;
+      RMSE: number;
+      MAPE: number;
+  },
+  errors_full_model: {
+      MAE: number;
+      RMSE: number;
+      MAPE: number;
+  }
+}

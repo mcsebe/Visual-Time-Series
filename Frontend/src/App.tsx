@@ -12,8 +12,7 @@ function App() {
     const payload: ArimaRequest = {
       data: [112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115, 126, 141, 135, 125, 149, 170, 170],
       params: {
-        order: [0, 0, 0],
-        trend: 'c'
+        order: [2, 2, 2],
       },
       number_test: 10,
       number_predict: 5
