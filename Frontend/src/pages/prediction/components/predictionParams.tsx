@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import useArima from "../../../hook/useArima"
 import { ArimaRequest } from "../../../types/arima"
 
@@ -21,6 +21,12 @@ export function PredictionParams() {
     number_test: 0,
     number_predict: 0
   })
+
+  useEffect(() => {
+    if (response) {
+      console.log('ARIMA Response:', response);
+    }
+  }, [response]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -48,7 +54,7 @@ export function PredictionParams() {
   }
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md">
+    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md text-black">
       <h2 className="text-2xl font-bold mb-4">ARIMA Parameters</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
