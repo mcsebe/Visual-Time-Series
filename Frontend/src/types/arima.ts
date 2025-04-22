@@ -14,7 +14,7 @@ export interface ArimaRequest {
     enforce_invertibility: boolean;
     concentrate_scale: boolean;
     trend_offset: number;
-    dates: string[] | Date[] | null;
+    dates: string[] | number[] |Date[] | null;
     freq: string | null;
     validate_specification: boolean;
   }

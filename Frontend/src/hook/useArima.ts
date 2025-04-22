@@ -4,7 +4,7 @@ import { ArimaRequest, ArimaData } from '../types/arima';
 
 
 
-export default function useArima(params: ArimaRequest) {
+export default function useArima(payload: ArimaRequest) {
     const [arima, setArima] = useState<ArimaData | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
@@ -14,7 +14,7 @@ export default function useArima(params: ArimaRequest) {
             try {
                 setLoading(true)
                 setError(null)
-                const { data } = await postArima(params)
+                const { data } = await postArima(payload)
                 setArima(data)
             } catch (error) {
                 setError((error as Error).message)
