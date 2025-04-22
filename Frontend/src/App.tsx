@@ -8,13 +8,11 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-
-
   const [payload, setPayload] = useState<ArimaRequest>({
     data: [112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115, 126, 141, 135, 125, 149, 170, 170],
     params: {
       exog: null,
-      order: [2, 2, 2],
+      order: [1, 0, 2],
       trend: null,
       enforce_stationarity: true,
       enforce_invertibility: true,
@@ -28,12 +26,12 @@ function App() {
     number_predict: 1
   });
 
-  const { arima, loading, error } = useArima(payload);
-  console.log('Predicción:', arima);
+  const { sendArima } = useArima();
 
   const handleSend = () => {
     try {
-      console.log('Predicción:', arima);
+      const result = sendArima();
+      console.log('Predicción:', result);
     } catch (error) {
       console.error('Error al predecir:', error);
     }
