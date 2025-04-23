@@ -7,7 +7,7 @@ import { useThemeStore } from "../utils/ThemeStore";
 const navItems = [
     { name: "Home", path: "/" },
     { name: "Github", path: "https://github.com/mcsebe/Visual-Time-Series" },
-    { name: "Creator", path: "https://www.linkedin.com/in/sebasti%C3%A1n-luarte-becar-4a458b222/" },
+    { name: "Let's Connect", path: "https://www.linkedin.com/in/sebasti%C3%A1n-luarte-becar-4a458b222/" },
 ];
 
 
