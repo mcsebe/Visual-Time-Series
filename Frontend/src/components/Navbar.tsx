@@ -15,12 +15,12 @@ export const Navbar = () => {
     const { toggleTheme, theme } = useThemeStore();
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50 py-3">
+        <header className="absolute inset-x-0 top-0 z-50 py-3 shadow-color-1 px-8">
             <Container className="flex items-center justify-between">
                 <nav className="w-full flex justify-between gap- relative">
                     <div className="min-w-max inline-flex relative">
                         <a href="/" className="relative flex items-center gap-3">
-                            <img src={logoWhite} alt="Logo" className="h-15" />
+                            <img src={theme === "dark" ? logoDark: logoWhite} alt="Logo" className="h-15" />
                         </a>
                     </div>
 
@@ -35,9 +35,9 @@ export const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className="min-w-max flex items-center gap-x-3">
+                    <div className="min-w-max flex items-center gap-x-3 ">
                         <button onClick={toggleTheme}
-                            className="outline-hidden flex relative text-heading-2 rounded-full p-2 lg:p-3 border 
+                            className="outline-hidden flex relative text-heading-2 rounded-full p-3 border 
                             border-box-border cursor-pointer items-center h-12"
                             >
                             {theme === "dark" ? (

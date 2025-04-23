@@ -8,6 +8,7 @@
   --heading-1: 23 37 84;
   --heading-2: 31 41 55;
   --heading-3: 55 65 81;
+  --shadow-color-1: 230 230 230;
 }
 
 .dark {
@@ -18,6 +19,7 @@
   --heading-1: 255 255 255;
   --heading-2: 243 244 246;
   --heading-3: 209 213 219;
+  --shadow-color-1: 16 24 46;
 }
 
 @layer utilities {
@@ -35,6 +37,9 @@
   }
   .text-heading-3 {
     color: rgb(var(--heading-3));
+  }
+  .shadow-color-1 {
+    box-shadow: 0 0 10px rgb(var(--shadow-color-1));
   }
 }
 
