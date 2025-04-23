@@ -4,13 +4,12 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom"
-import { ThemeProvider } from "./components/themeProvider"
+import { Layout } from "./components/Layout"
 
 function App() {
 
   return (
-    <div className="bg-background">
-      <ThemeProvider>
+      <Layout title="TimeSeries">
         <Router>
           <Routes>
 
@@ -22,8 +21,7 @@ function App() {
             />
           </Routes>
         </Router>
-      </ThemeProvider>
-    </div>
+      </Layout>
   )
 }
 
