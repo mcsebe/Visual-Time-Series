@@ -1,4 +1,5 @@
-import { Prediction } from "./pages/prediction/prediction"
+import { Prediction } from "./pages/prediction/Prediction"
+import { Games } from "./pages/games/Games"
 import {
   Route,
   BrowserRouter as Router,
@@ -16,7 +17,7 @@ function App() {
             <Route
               path="/"
               element={
-                    <Prediction />
+                    <Games />
               }
             />
           </Routes>

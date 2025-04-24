@@ -17,7 +17,7 @@ export const Navbar = () => {
     return (
         <header className="absolute inset-x-0 top-0 z-50 py-3 shadow-color-1 px-8">
             <Container className="flex items-center justify-between">
-                <nav className="w-full flex justify-between gap- relative">
+                <nav className="w-full flex justify-between gap-6 relative">
                     <div className="min-w-max inline-flex relative">
                         <a href="/" className="relative flex items-center gap-3">
                             <img src={theme === "dark" ? logoDark: logoWhite} alt="Logo" className="h-15" />

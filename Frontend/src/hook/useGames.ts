@@ -1,17 +1,17 @@
 import { useState, useCallback } from 'react';
-import { postArima } from '../services/arimaService';
-import { ArimaRequest, ArimaData } from '../types/arima';
+import { getTopGames } from '../services/gamesService';
+import { GameData } from "../types/games";
 
-export default function useArima() {
-    const [response, setResponse] = useState<ArimaData | null>(null)
+export default function useGames() {
+    const [response, setResponse] = useState<GameData[] | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
-    const sendArima = useCallback(async (arima: ArimaRequest) => {
+    const getGames = useCallback(async () => {
         try {
             setLoading(true)
             setError(null)
-            const data = await postArima(arima)
+            const data = await getTopGames()
             setResponse(data)
           } catch (error) {
             setError((error as Error).message)
@@ -20,9 +20,9 @@ export default function useArima() {
           }
         }, [])
         return {
-            sendArima,
-            response,
-            loading,
-            error,
+          getGames,
+          response,
+          loading,
+          error,
         }
 }
