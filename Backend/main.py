@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 
 from models.Arima import Arima_Model
+from scrap.Scrap import ScrapeTopGames
 
 app = FastAPI()
 
@@ -32,6 +33,9 @@ class ModelRequest(BaseModel):
 def read_root():
     return {"Hello": "World"}
 
+@app.get("/topgames")
+def read_root():
+    return ScrapeTopGames()
 
 @app.put("/arima")
 def read_item(request: ModelRequest):
