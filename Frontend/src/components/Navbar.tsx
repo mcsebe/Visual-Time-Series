@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <nav className="w-full flex justify-between gap-6 relative">
                     <div className="min-w-max inline-flex relative">
                         <a href="/" className="relative flex items-center gap-3">
-                            <img src={theme === "dark" ? logoColor: logoWhite} alt="Logo" className="h-15" />
+                            <img src={theme === "dark" ? logoWhite: logoColor} alt="Logo" className="h-13" />
                         </a>
                     </div>
 

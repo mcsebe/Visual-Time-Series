@@ -11,7 +11,7 @@ export function Games() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden p-4">
+    <div className="relative min-h-screen overflow-hidden p-4 md:px-10 lg:px-15">
       <div className="relative z-10 w-full flex flex-wrap justify-center gap-8">
         {loading && !response
           ? Array.from({ length: 100 }).map((_, index) => (
