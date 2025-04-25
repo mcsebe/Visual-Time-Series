@@ -6,7 +6,7 @@ export const GameCard = ({ name, app_id, concurrent_players }: GameData) => {
   const [imgSrc, setImgSrc] = useState(`https://cdn.cloudflare.steamstatic.com/steam/apps/${app_id}/header.jpg`);
 
   return (
-    <div className="relative max-w-115 max-h-55 overflow-hidden rounded-2xl shadow-color-1 group">
+    <div className="relative max-w-115 max-h-55 overflow-hidden rounded-2xl shadow-color-2 group">
         <a href={`/prediction/${app_id}`}>
             <img
                 src={imgSrc}
@@ -16,7 +16,7 @@ export const GameCard = ({ name, app_id, concurrent_players }: GameData) => {
             />
             <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent">
                 <div className="flex justify-between w-full p-3">
-                <div className="text-xl text-white">{name}</div>
+                <div className="text-xl text-white max-w-90">{name}</div>
                 <div className="text-l text-green-400">{concurrent_players}</div>
                 </div>
             </div>

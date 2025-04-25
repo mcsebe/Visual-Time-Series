@@ -1,6 +1,6 @@
 import { Container } from "./Container";
-import logoWhite from "../assets/logo_white.jpg";
-import logoDark from "../assets/logo_dark.jpg";
+import logoWhite from "../assets/LOGO-WHITE.svg";
+import logoColor from "../assets/LOGO-COLOR.svg";
 import { NavItem } from "./NavItem";
 import { useThemeStore } from "../utils/ThemeStore";
 
@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <nav className="w-full flex justify-between gap-6 relative">
                     <div className="min-w-max inline-flex relative">
                         <a href="/" className="relative flex items-center gap-3">
-                            <img src={theme === "dark" ? logoDark: logoWhite} alt="Logo" className="h-15" />
+                            <img src={theme === "dark" ? logoColor: logoWhite} alt="Logo" className="h-15" />
                         </a>
                     </div>
 
