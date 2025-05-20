@@ -20,6 +20,13 @@ function App() {
                     <Games />
               }
             />
+
+            <Route
+              path="/prediction/:id"
+              element={
+                    <Prediction />
+              }
+            />
           </Routes>
         </Router>
       </Layout>
