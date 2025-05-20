@@ -13,8 +13,18 @@ export function Games() {
 
   return (
     <div className="relative min-h-screen overflow-hidden p-4 md:px-10 lg:px-15">
+
+      <div className="mt-5 mb-10 px-2 text-center">
+        <h1 className="text-4xl font-bold text-heading-1">
+          Welcome to the Time Series Forecasting Dashboard
+        </h1>
+        <p className="mt-2 text-2xl text-heading-3">
+          Here you'll find the 100 most-played Steam titles. Select a game to explore its data and generate forecasts.
+        </p>
+      </div>
+
       {error ? (
-        <ErrorMessage message='Failed to load games'/>
+        <ErrorMessage message="Failed to load games. Please try again." />
       ) : (
         <div className="relative z-10 w-full flex flex-wrap justify-center gap-8">
           {loading && !response
