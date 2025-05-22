@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useGameHistory from "../../hook/useGameHistory";
 import { ErrorMessage } from "../../components/ErrorMessage";
-import { LineChart } from '@mui/x-charts/LineChart';
+
 
 
 export const dataset = [
@@ -25,11 +25,11 @@ export function Prediction() {
   }, []);
 
   return (
-    <div className="relative min-h-screen p-4">
+    <div className="relative min-h-screen p-4 lg:px-15">
       {error ? (
         <ErrorMessage message='Failed to load information'/>
       ) : (
-        <div className="mx-auto w-full px-2     flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
+        <div className="mx-auto w-full px-2 flex flex-col lg:flex-row gap-5 items-center">
           <div className="w-full md:w-full lg:w-2/5     border-2 border-gray-200 rounded-lg shadow-md p-4">
             <div className="w-full relative">
               <h1>{id}</h1>
@@ -38,15 +38,10 @@ export function Prediction() {
           </div>
 
 
-          <div className="w-full md:w-full lg:w-2/3 flex flex-col    border-2 border-gray-200 rounded-lg shadow-md p-4">
-            <LineChart
-              dataset={dataset}
-              xAxis={[{ dataKey: 'x' }]}
-              series={[{ dataKey: 'y' }]}
-              height={300}
-              grid={{ vertical: true, horizontal: true }}
-            />
+          <div className="w-full md:w-full lg:w-2/3 flex flex-col border-2 border-gray-200 rounded-lg shadow-md"> {/* bg-white */}
+
           </div>
+
 
         </div>
        )}
